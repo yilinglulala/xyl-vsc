@@ -1,0 +1,27 @@
+{
+    "httpPost1": {
+        "prefix": "httpPost1",
+        "body": [
+            "const params = {}",
+            "const url = `${this.PATH_PREFIX.AI}${this.API.TOOL.MSGBOX.FETCH_MSG}`",
+            "this.\\$http.post(url, { ...params }).then(result => {",
+            "\tconst { code, msg, data } = result",
+            "\tif (code === 0) {",
+            "\t\tthis.\\$message.success('success')",
+            "\t} else {",
+            "\t\tthis.\\$message.error(msg)",
+            "\t}",
+            "}).catch(err => {",
+            "\tthis.\\$message.error(err)",
+            "})"
+        ],
+        "description": "Code snippet for \"axios Http Post\""
+    },
+    "testA": {
+        "prefix": "testA",
+        "body": [
+            "abcde"
+        ],
+        "description": "Code snippet for \"axios aaa\""
+    }
+}
