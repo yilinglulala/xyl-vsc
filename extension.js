@@ -62,7 +62,6 @@ function activate(context) {
     "extension.selection",
     function (textEditor) {
       const text = textEditor.document.getText(textEditor.selection);
-	  vscode.window.showInformationMessage(text);
       console.log("选中的文本是:", text);
     }
   );
