@@ -1,6 +1,8 @@
 const vscode = require("vscode");
 const path = require('path');
 const fs = require('fs');
+const vueTemp = require('./template/vue-temp.js')
+
 async function hover(document, position) {
   // 获取所在行的文本
   const line = document.lineAt(position).text; // 光标所在的行
@@ -15,7 +17,7 @@ async function hover(document, position) {
   // console.log('当前位置：' , document.fileName, path.dirname(document.fileName))
   // 获取当前项目工作路径
   const projectPath = document.fileName.replace(/\\src\\.+$/,'')
-  console.log(projectPath+ `\\node_modules\\yl-element-ui\\src\\components\\table-can\\src\\main-jsx.vue`)
+  console.log(1, projectPath, projectPath + `\\node_modules\\yl-element-ui\\src\\components\\table-can\\src\\main-jsx.vue`)
   // 获取文件
   var data = fs.readFileSync(projectPath + `\\node_modules\\yl-element-ui\\src\\components\\table-can\\src\\main-jsx.vue`);
   let str = data.toString()
@@ -30,7 +32,8 @@ async function hover(document, position) {
 
   // 显示hover
   // `* **名称**：${content.name}\n* **版本**：${content.version}\n* **许可协议**：${content.license}`
-  return new vscode.Hover('我是hover 文本'+text);
+  // console.log(11, vueTemp.template)
+  return new vscode.Hover(vueTemp.template());
   // let compPath = path.resolve(__dirname)
 
 }
